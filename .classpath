@@ -6,6 +6,10 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="lib/report.jar"/>
+	<classpathentry kind="lib" path="lib/report.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/avanzadojavase/doc/makeReportDoc.zip!/"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

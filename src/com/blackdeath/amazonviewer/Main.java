@@ -12,6 +12,19 @@ import com.blackdeath.amazonviewer.model.Serie;
 import com.blackdeath.amazonviewer.util.AmazonUtil;
 import com.blackdeath.makereport.Report;
 
+/**
+ * <H1>AmazonViewer</h1> AmazonViewer es un programa que permite veisualiza
+ * Movies, Series, Bookes y Maagazines. También te permite generar reportes
+ * generales y con la fecha del día.
+ * <p>
+ * Existen algunas reglas como que todos elementos peuden ser visualizados o
+ * leídos a excepción d elos Magazines.
+ * 
+ * @author Seth Luis
+ * @version 1.0
+ * @since 2018
+ *
+ */
 public class Main {
 
 	private static ArrayList<Movie> movies = Movie.makeMoviesList();

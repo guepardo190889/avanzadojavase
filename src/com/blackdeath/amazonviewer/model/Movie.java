@@ -3,6 +3,12 @@ package com.blackdeath.amazonviewer.model;
 import java.util.ArrayList;
 import java.util.Date;
 
+/**
+ * Hereda de {@link Film} Implementa {@link IVisualizable}}
+ * 
+ * @author Seth Luis
+ *
+ */
 public class Movie extends Film implements IVisualizable {
 
 	private int id;
@@ -25,11 +31,17 @@ public class Movie extends Film implements IVisualizable {
 		this.timeViewed = timeViewed;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public Date startToSee(Date dateI) {
 		return dateI;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public void stopToSee(Date dateI, Date dateF) {
 		if (dateF.getTime() > dateI.getTime()) {
@@ -65,6 +77,9 @@ public class Movie extends Film implements IVisualizable {
 				+ "\n Creator: " + getCreator() + "\n Duration: " + getDuration();
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public void view() {
 		setViewed(true);
