@@ -4,7 +4,7 @@ package com.blackdeath.amazonviewer.model;
  * @author Seth Luis
  *
  */
-public class Film {
+public abstract class Film {
 	private String title;
 	private String genre;
 	private String creator;
@@ -72,6 +72,8 @@ public class Film {
 		this.viewed = viewed;
 	}
 
+	public abstract void view();
+	
 	public void play() {
 		for (int i = 0; i < 100_000; i++) {
 			System.out.println("........................................");

@@ -82,4 +82,16 @@ public class Book extends Publication implements IVisualizable {
 		return books;
 	}
 
+	public void view() {
+		setReaded(true);
+		Date dateI = startToSee(new Date());
+
+		read();
+
+		stopToSee(dateI, new Date());
+
+		System.out.println();
+		System.out.println("Leíste: " + toString());
+		System.out.println("Por: " + getTimeReaded() + " milisegundos");
+	}
 }

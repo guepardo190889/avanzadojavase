@@ -26,12 +26,6 @@ public class Movie extends Film implements IVisualizable {
 	}
 
 	@Override
-	public String toString() {
-		return "\n :: MOVIE ::" + "\n Title: " + getTitle() + "\n Genre: " + getGenre() + "\n Year: " + getYear()
-				+ "\n Creator: " + getCreator() + "\n Duration: " + getDuration();
-	}
-
-	@Override
 	public Date startToSee(Date dateI) {
 		return dateI;
 	}
@@ -63,6 +57,25 @@ public class Movie extends Film implements IVisualizable {
 		movies.add(new Movie("Yo, robot ", "Ciencia Ficción", "Alex Proyas", 115, (short) 2004));
 
 		return movies;
+	}
+
+	@Override
+	public String toString() {
+		return "\n :: MOVIE ::" + "\n Title: " + getTitle() + "\n Genre: " + getGenre() + "\n Year: " + getYear()
+				+ "\n Creator: " + getCreator() + "\n Duration: " + getDuration();
+	}
+
+	@Override
+	public void view() {
+		setViewed(true);
+
+		Date dateI = startToSee(new Date());
+		play();
+		stopToSee(dateI, new Date());
+
+		System.out.println();
+		System.out.println("Viste: " + toString());
+		System.out.println("Por: " + getTimeViewed() + " milisegundos");
 	}
 
 }
