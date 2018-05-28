@@ -11,5 +11,6 @@
 			<attribute name="javadoc_location" value="jar:platform:/resource/avanzadojavase/doc/makeReportDoc.zip!/"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="lib/mysql-connector-java-5.1.46.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
