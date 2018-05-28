@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"com.blackdeath.amazonviewer"},{"l":"com.blackdeath.amazonviewer.model"},{"l":"com.blackdeath.amazonviewer.util"}]

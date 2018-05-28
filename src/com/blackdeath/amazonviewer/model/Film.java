@@ -6,7 +6,7 @@ package com.blackdeath.amazonviewer.model;
  * Esta clase es la clase base de la familia Films y como es abstracta no pueden
  * crearse instancias.
  * 
- * Contiene el método abstracto {@code view()}} que es obligatorio implementar
+ * Contiene el método abstracto {@code view()} que es obligatorio implementar
  * para todo aquel que pertenezca a la familia
  * 
  * 

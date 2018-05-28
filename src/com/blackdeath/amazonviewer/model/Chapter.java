@@ -2,6 +2,14 @@ package com.blackdeath.amazonviewer.model;
 
 import java.util.ArrayList;
 
+/**
+ * <h1>Chapter</h1> Capítulo de una serie Hereda de {@link Movie}
+ * 
+ * @see Film
+ * 
+ * @author Seth Luis
+ * @since 2018
+ */
 public class Chapter extends Movie {
 
 	private int id;
@@ -58,6 +66,9 @@ public class Chapter extends Movie {
 		return chapters;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public void view() {
 		super.view();
