@@ -91,7 +91,7 @@ public class Main {
 		if (movies == null || movies.isEmpty()) {
 			movies = Movie.makeMoviesList();
 		}
-		
+
 		int exit = 1;
 
 		do {
@@ -231,13 +231,26 @@ public class Main {
 	}
 
 	public static void makeReport() {
+		if (movies == null || movies.isEmpty()) {
+			movies = Movie.makeMoviesList();
+		}
+
+		if (series == null || series.isEmpty()) {
+			series = Serie.makeSeriesList();
+		}
+
+		if (books == null || books.isEmpty()) {
+			books = Book.makeBooksList();
+		}
+
 		Report report = new Report();
 		report.setNameFile("reporte");
 		report.setTitle(":: VISTOS ::");
 		report.setExtension("txt");
 
 		StringBuilder contentReport = new StringBuilder();
-		contentReport.append(getDataContentReport());
+
+		contentReport.append(getDataContentReport(movies, series, books));
 
 		report.setContent(contentReport.toString());
 		report.makeReport();
@@ -247,6 +260,11 @@ public class Main {
 	}
 
 	public static void makeReport(Date date) {
+		Movie movie = new Movie();
+		ArrayList<Movie> movies = movie.getMoviesViewedByDate(date);
+		ArrayList<Serie> series = new ArrayList<>();
+		ArrayList<Book> books = new ArrayList<>();
+
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd-h-m-s-S");
 		SimpleDateFormat dfNameDays = new SimpleDateFormat("E, W MMM Y");
 
@@ -257,7 +275,7 @@ public class Main {
 
 		StringBuilder contentReport = new StringBuilder();
 		contentReport.append("Date: ").append(dfNameDays.format(date)).append("\n\n\n");
-		contentReport.append(getDataContentReport());
+		contentReport.append(getDataContentReport(movies, series, books));
 
 		report.setContent(contentReport.toString());
 		report.makeReport();
@@ -266,31 +284,34 @@ public class Main {
 		System.out.println();
 	}
 
-	private static String getDataContentReport() {
+	private static String getDataContentReport(ArrayList<Movie> movies, ArrayList<Serie> series,
+			ArrayList<Book> books) {
 		StringBuilder sb = new StringBuilder();
 
-		if (movies == null || movies.isEmpty()) {
-			movies = Movie.makeMoviesList();
-		}
-
-		for (Movie movie : movies) {
-			if (movie.getIsViewed()) {
-				sb.append(movie.toString()).append("\n");
-			}
-		}
-
-		for (Serie serie : series) {
-			ArrayList<Chapter> chapters = serie.getChapters();
-			for (Chapter chapter : chapters) {
-				if (chapter.getIsViewed()) {
-					sb.append(chapter.toString()).append("\n");
+		if (movies != null && !movies.isEmpty()) {
+			for (Movie movie : movies) {
+				if (movie.getIsViewed()) {
+					sb.append(movie.toString()).append("\n");
 				}
 			}
 		}
 
-		for (Book book : books) {
-			if (book.getIsReaded()) {
-				sb.append(book.toString()).append("\n");
+		if (series != null && !series.isEmpty()) {
+			for (Serie serie : series) {
+				ArrayList<Chapter> chapters = serie.getChapters();
+				for (Chapter chapter : chapters) {
+					if (chapter.getIsViewed()) {
+						sb.append(chapter.toString()).append("\n");
+					}
+				}
+			}
+		}
+
+		if (books != null && !books.isEmpty()) {
+			for (Book book : books) {
+				if (book.getIsReaded()) {
+					sb.append(book.toString()).append("\n");
+				}
 			}
 		}
 

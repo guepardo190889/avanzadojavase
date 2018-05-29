@@ -67,12 +67,6 @@ public class Movie extends Film implements IVisualizable, IMovieDAO {
 		return movie.read();
 	}
 
-	@Override
-	public String toString() {
-		return "\n :: MOVIE ::" + "\n Title: " + getTitle() + "\n Genre: " + getGenre() + "\n Year: " + getYear()
-				+ "\n Creator: " + getCreator() + "\n Duration: " + getDuration();
-	}
-
 	/**
 	 * {@inheritDoc}
 	 */
@@ -92,4 +86,9 @@ public class Movie extends Film implements IVisualizable, IMovieDAO {
 		System.out.println("Por: " + getTimeViewed() + " milisegundos");
 	}
 
+	@Override
+	public String toString() {
+		return "\n :: MOVIE ::" + "\n Title: " + getTitle() + "\n Genre: " + getGenre() + "\n Year: " + getYear()
+				+ "\n Creator: " + getCreator() + "\n Duration: " + getDuration();
+	}
 }
