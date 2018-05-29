@@ -65,7 +65,7 @@ public class Book extends Publication implements IVisualizable {
 		calF.setTime(dateF);
 
 		if (calF.getTimeInMillis() > calI.getTimeInMillis()) {
-			setTimeReaded((int)(calF.getTimeInMillis() - calI.getTimeInMillis()));
+			setTimeReaded((int) ((calF.getTimeInMillis() - calI.getTimeInMillis()) / 1_000));
 		} else {
 			setTimeReaded(0);
 		}
