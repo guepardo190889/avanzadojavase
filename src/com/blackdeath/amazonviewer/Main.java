@@ -27,7 +27,7 @@ import com.blackdeath.makereport.Report;
  */
 public class Main {
 
-	private static ArrayList<Movie> movies = Movie.makeMoviesList();
+	private static ArrayList<Movie> movies = new ArrayList<>();
 	private static ArrayList<Serie> series = Serie.makeSeriesList();
 	private static ArrayList<Book> books = Book.makeBooksList();
 	private static ArrayList<Magazine> magazines = Magazine.makeMagazineList();
@@ -88,6 +88,10 @@ public class Main {
 	}
 
 	public static void showMovies() {
+		if (movies == null || movies.isEmpty()) {
+			movies = Movie.makeMoviesList();
+		}
+		
 		int exit = 1;
 
 		do {
@@ -264,6 +268,10 @@ public class Main {
 
 	private static String getDataContentReport() {
 		StringBuilder sb = new StringBuilder();
+
+		if (movies == null || movies.isEmpty()) {
+			movies = Movie.makeMoviesList();
+		}
 
 		for (Movie movie : movies) {
 			if (movie.getIsViewed()) {

@@ -23,6 +23,10 @@ public abstract class Film {
 	private short year;
 	private boolean viewed;
 
+	public Film() {
+
+	}
+
 	public Film(String title, String genre, String creator, int duration) {
 		super();
 		this.title = title;
@@ -89,7 +93,7 @@ public abstract class Film {
 	public abstract void view();
 
 	public void play() {
-		for (int i = 0; i < 100_000; i++) {
+		for (int i = 0; i < 10_000; i++) {
 			System.out.println("........................................");
 		}
 	}

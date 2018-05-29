@@ -1,0 +1,15 @@
+:: VISTOS ::
+
+ :: MOVIE ::
+ Title: Coco
+ Genre: Animación
+ Year: 2017
+ Creator: Pixart
+ Duration: 120
+
+ :: MOVIE ::
+ Title: El juego de Ender
+ Genre: Ciencia Ficción
+ Year: 2013
+ Creator: Gavin Hood
+ Duration: 114
