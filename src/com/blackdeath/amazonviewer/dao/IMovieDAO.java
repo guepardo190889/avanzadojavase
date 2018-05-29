@@ -1,16 +1,27 @@
 package com.blackdeath.amazonviewer.dao;
 
+import static com.blackdeath.amazonviewer.db.DataBase.ID_MATERIAL;
+import static com.blackdeath.amazonviewer.db.DataBase.ID_USUARIO;
+import static com.blackdeath.amazonviewer.db.DataBase.T_MOVIE;
+import static com.blackdeath.amazonviewer.db.DataBase.T_MOVIE_CREATOR;
+import static com.blackdeath.amazonviewer.db.DataBase.T_MOVIE_DURATION;
+import static com.blackdeath.amazonviewer.db.DataBase.T_MOVIE_GENRE;
+import static com.blackdeath.amazonviewer.db.DataBase.T_MOVIE_ID;
+import static com.blackdeath.amazonviewer.db.DataBase.T_MOVIE_TITLE;
+import static com.blackdeath.amazonviewer.db.DataBase.T_MOVIE_YEAR;
+import static com.blackdeath.amazonviewer.db.DataBase.T_VIEWED;
+import static com.blackdeath.amazonviewer.db.DataBase.T_VIEWED_ID_ELEMENT;
+import static com.blackdeath.amazonviewer.db.DataBase.T_VIEWED_ID_MATERIAL;
+import static com.blackdeath.amazonviewer.db.DataBase.T_VIEWED_ID_USER;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 
 import com.blackdeath.amazonviewer.db.IDBConenection;
 import com.blackdeath.amazonviewer.model.Movie;
-
-import static com.blackdeath.amazonviewer.db.DataBase.*;
 
 public interface IMovieDAO extends IDBConenection {
 

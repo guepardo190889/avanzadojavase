@@ -1,6 +1,7 @@
 package com.blackdeath.amazonviewer.model;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 
 import com.blackdeath.amazonviewer.util.AmazonUtil;
@@ -57,8 +58,14 @@ public class Book extends Publication implements IVisualizable {
 
 	@Override
 	public void stopToSee(Date dateI, Date dateF) {
-		if (dateF.getSeconds() > dateI.getSeconds()) {
-			setTimeReaded(dateF.getSeconds() - dateI.getSeconds());
+		Calendar calI = Calendar.getInstance();
+		calI.setTime(dateI);
+
+		Calendar calF = Calendar.getInstance();
+		calF.setTime(dateF);
+
+		if (calF.getTimeInMillis() > calI.getTimeInMillis()) {
+			setTimeReaded((int)(calF.getTimeInMillis() - calI.getTimeInMillis()));
 		} else {
 			setTimeReaded(0);
 		}

@@ -10,6 +10,7 @@ import java.sql.DriverManager;
 
 public interface IDBConenection {
 
+	@SuppressWarnings("finally")
 	default Connection connectToDB() {
 		Connection connection = null;
 
